@@ -6,6 +6,32 @@
     <link rel="icon" href="./favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+    const urlParams = window.location.href.split('#')[1];
+   if(urlParams){
+       const [key, value] = urlParams.split('=');
+       if(key === 'download'){
+          localStorage.setItem('download', value);
+               if(isIOSOrAndroid() === 'android'){
+                   window.location.href = 'https://play.google.com/store/apps/details?id=com.hili.hili';
+               }else if(isIOSOrAndroid() === 'ios'){
+                   window.location.href = 'https://apps.apple.com/us/app/hili/id1571313947';
+               }
+       }
+   }
+
+   function isIOSOrAndroid() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android/i.test(userAgent)) {
+            return 'android';
+        }
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return 'ios';
+        }
+        return 'unknown';
+    }
+
+    </script>
 </head>
 <body>
 <div style="height: 300px;display: flex;justify-content: center;align-items: center;gap:32px">
