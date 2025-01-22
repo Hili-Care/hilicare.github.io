@@ -19,7 +19,14 @@
                }
        }
    }else{
-   //    window.location.href = 'https://site.hilicare.com';
+       //if browser language is hebrew
+         if(navigator.language === 'he-IL'){
+              window.location.href = 'https://site.hilicare.com/he/home-%d7%a2%d7%91%d7%a8%d7%99%d7%aa/';
+         }else{
+             window.location.href = 'https://site.hilicare.com';
+         }
+
+
    }
 
    function isIOSOrAndroid() {
